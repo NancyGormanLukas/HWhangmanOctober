@@ -30,7 +30,61 @@ function startGame(){
 		}
 
 document.getElementbyId("wordToGuess").innerHTML = blanksAndSuccesses.join("  ");
+document.getElementbyId("numGuesses").innerHTML = guessesLeft;
+document.getElementbyId("winCounter").innerHTML = winCount;
+document.getElementbyId("lossCounter").innerHTML = lossCount;
+
+function checkLetters(letter){
+	var isLetterInWord = false;
+	for (var i= 0; i< numBlanks; i++){
+		if (selectedWord[i] == letter){
+			isLetterInWord = true;
+		}
+		}
+if(isLetterInWord){
+	for (var i = 0; i<numBlanks; i++){
+		if(selectedWord[i]== letter){
+			blanksAndSuccesses[i] =letter;
+		}
+	}
+
+else {
+	wrongLetters.push(letter);
+	guessesLeft--
 }
+
+}
+
+function roundComplete(){
+	console.log("Win Count: " + winCount + " | Loss Count: " + lossCount + " | Guesses Left" + numGuesses);
+
+	document.getElementbyId("numGuesses").innerHTML = guessesLeft;
+	document.getElementbyId("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
+  document.getElementbyId("wrongGuesses").innerHTML = wrongLetters.join(" ");
+
+
+	if(lettersInWord.toString() == blanksAndSuccesses.toString()){
+		winCount++;
+		alert("You got it!");
+
+		document.getElementbyId("winCounter").innerHTML = winCount;
+		startGame();
+	}
+	else if (guessesLeft ==0){
+		lossCount++:
+		alert("You need to go over the names of your classmates!");
+
+		document.getElementbyId("lossCounter").innerHTML = lossCount;
+		startGame();
+	}
+}
+
 //functions invoked- main processes
 
 startGame();
+
+document.onkeyup = function(event){
+	var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+	checkLetters(letterGuessed);
+	roundComplete();
+}
