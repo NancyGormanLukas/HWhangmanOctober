@@ -1,62 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Best Class Ever Name Game</title>
+<meta charset="UTF-8">
+    <title>Hangman</title>
+ 
+ 	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Special+Elite|Fredericka+the+Great' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="assets/css/style.css">
+ 	<script src="assets/javascript/game.js"></script> 
 
-	<!-- Bootstrap is used to make game look nicer -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
-	<div class="container">
-		<div class="jumbotron">
-			<div class="container">
-				<h1>Do you know all of your classmates names?</h1>
-				<h2>Check and see if you can guess them.</h2> 
-				<p>Type any letter to begin...</p>
-			</div>
-		</div>
+<div class="container"> 
 
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title"><strong>Word to Guess</strong></h3>
-					</div>
-					<div class="panel-body">
-						<h2 id="wordToGuess">_ _ _ _ _ _ _ _ _ </h2>
-					</div>
-				</div>
-	
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<strong>Incorrect Letters Guessed: </strong> <span id="wrongGuesses"></span>
-					</div>
-				</div>
 
-				<div class="panel panel-default">
-					<div class="panel-body">
-
-						<strong>Guesses Left: </strong> <span id="numGuesses">9</span>
-					</div>
-				</div>
-
-				<div class="panel panel-default">
-					<div class="panel-body">
-
-						<strong>Wins: </strong> <span id="winCounter">0</span>
-					</div>
-				</div>
-
-				<div class="panel panel-default">
-					<div class="panel-body">
-
-						<strong>Losses: </strong> <span id="lossCounter">0</span>
-					</div>
-				</div>
-			</div>
-		</div>
+<div class="row">
+	<div class="col-md-12 header text-center">
+		<text class="header1">Boot Camp Classmates' Names</text>
+		<text class="header2"> HANGMAN</text>
 	</div>
-	<script src="logic.js"></script>
+</div>
+
+
+<div class="row">
+<div class="col-md-12">
+
+	<div class="col-md-5 col-md-offset-1 textbox img-rounded text-center pic" style="height: 386px;">
+		
+		<!-- hangman image goes here -->
+		
+		<div class="hangman"></div>
+
+
+		<p class="info">press enter to start</p>
+
+		<div class="answer">
+			<p class="response"></p>
+			<p class="anykey"></p>
+		</div>
+
+
+	</div><!-- close first textbox -->
+	
+	<div class="col-md-4 col-md-offset-1 textbox img-rounded text-center">	
+				<h2>current word: </h2>
+				<h2 class="positions"></h2>
+	</div>
+
+	<div class="col-md-4 col-md-offset-1 textbox img-rounded text-center" style="height:100px;">
+				<h2>guessed letters: </h2>
+				<p class="lettersGuessed" style="font-weight:bold;"></p>
+
+	</div>
+
+	<div class="col-md-4 col-md-offset-1 textbox img-rounded text-center" style="height:125px;">
+		<div class="col-md-4">
+					<h2>wins:</h2>
+				<p class="wins"></p>
+			</div>
+			<div class="col-md-4">
+					<h2>losses:</h2>
+					<p class="losses"></p>
+			</div>
+			<div class="col-md-4">
+					<h2>guesses:</h2>
+					<p class="guesses"></p>
+			</div>
+	</div>
+
+</div>
+</div><!-- row2 -->
+
+<div class="navbar-fixed-bottom text-center footer">
+	<text>created and coded by 
+		<a href="mailto:nlukas13@optonline.net">Nancy Gorman Lukas</a> | 2016
+	</text>
+</div>
+
+
+
+</div><!-- .container -->
 </body>
 </html>
